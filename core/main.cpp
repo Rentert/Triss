@@ -1,8 +1,11 @@
 #include <iostream>
-
-using namespace std;
+#include "Headers/parcer/ParseExecutor.h"
+#include "Headers/parcer/UserInfoParser.h"
 
 int main() {
-    cout << "Hello, World!" << endl;
+
+    ParseExecutor executor;
+
+    std::cout << executor.execute();
     return 0;
 }
