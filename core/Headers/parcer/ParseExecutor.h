@@ -6,6 +6,7 @@
 #define TRISS_PARSEEXECUTOR_H
 
 
+
 #include <iostream>
 #include <vector>
 #include "AbstractSystemParser.h"
@@ -17,6 +18,8 @@ public:
 
 private:
     std::vector<AbstractSystemParser*> parsers;
+    std::string getCloseString() const;
+    std::string getOpenString() const;
 };
 
 

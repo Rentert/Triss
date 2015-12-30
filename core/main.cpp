@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Headers/parcer/ParseExecutor.h"
-#include "Headers/parcer/UserInfoParser.h"
 
 int main() {
 

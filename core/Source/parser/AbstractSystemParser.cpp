@@ -44,15 +44,14 @@ std::string *AbstractSystemParser::split(std::string info, char splitChar) {
     std::string* result = new std::string[2];
     std::string buffer = getEmptyString();
 
-    for (int i = 0; i < info.size(); ++i) {
-        char ch = info.at(i);
-        if (ch == splitChar)
+    for (const auto &value : info) {
+        if (value == splitChar)
         {
             result[0] = buffer;
             buffer = getEmptyString();
         }
         else
-            buffer += ch;
+            buffer += value;
     }
 
     result[1] = buffer;
@@ -63,10 +62,9 @@ std::string *AbstractSystemParser::split(std::string info, char splitChar) {
 std::string AbstractSystemParser::replaceChar(std::string str, char from) {
     std::string result = getEmptyString();
 
-    for (int i = 0; i < str.size(); ++i) {
-        char ch = str.at(i);
-        if (ch != from) {
-            result += ch;
+    for (const auto &value : str) {
+        if (value != from) {
+            result += value;
         }
     }
 

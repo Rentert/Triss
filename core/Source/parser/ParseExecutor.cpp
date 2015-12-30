@@ -14,11 +14,19 @@ ParseExecutor::ParseExecutor() {
 }
 
 std::string ParseExecutor::execute() {
-    std::string result = "{";
+    std::string result = getOpenString();
     for (int i = 0; i < parsers.size() - 1; ++i)
-        result += parsers.at(i)->update() + ",";
+        result += parsers.at(i) -> update() + ",";
 
-    result += parsers.back()->update();
+    result += parsers.back() -> update();
 
-    return result + "}";
+    return result + getCloseString();
+}
+
+std::string ParseExecutor::getOpenString() const {
+    return "{";
+}
+
+std::string ParseExecutor::getCloseString() const {
+    return "}";
 }

@@ -27,11 +27,10 @@ std::vector<std::string> CpuInfoParser::splitToLineEnd(std::string str, int numb
     std::string buffer = getEmptyString();
     int numbLineEnd = 0;
 
-    for (int i = 0; i < str.size(); ++i) {
-        char ch = str.at(i);
-        buffer += ch;
+    for (const auto &value : str) {
+        buffer += value;
 
-        if (ch == '\n') {
+        if (value == '\n') {
             numbLineEnd++;
             if (numbLineEnd == numb) {
                 vector.push_back(buffer);
@@ -40,5 +39,6 @@ std::vector<std::string> CpuInfoParser::splitToLineEnd(std::string str, int numb
             }
         }
     }
+
     return vector;
 }
