@@ -9,7 +9,7 @@
 
 class MemInfoParser : public AbstractSystemParser {
 public:
-    std::string update();
+    std::string update() override;
 };
 
 

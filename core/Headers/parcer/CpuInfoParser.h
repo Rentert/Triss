@@ -10,7 +10,7 @@
 
 class CpuInfoParser : public AbstractSystemParser{
 public:
-    std::string update();
+    std::string update() override;
 
 private:
     std::vector<std::string> splitToLineEnd(std::string str, int numb);

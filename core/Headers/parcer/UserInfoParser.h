@@ -10,7 +10,7 @@
 
 class UserInfoParser : public AbstractSystemParser {
 public:
-    std::string update();
+    std::string update() override;
 };
 
 

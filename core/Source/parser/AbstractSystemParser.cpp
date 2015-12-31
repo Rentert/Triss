@@ -74,7 +74,7 @@ std::string AbstractSystemParser::replaceChar(std::string str, char from) {
 std::string AbstractSystemParser::createValue(std::string buffer, std::string endValue) {
     std::string rs = replaceChar(buffer, '\t');
     std::string* array = split(replaceChar(rs, ' '), ':');
-    return  "'" + array[0] + "' : '" + array[1] + endValue;
+    return  array[0] + " : '" + array[1] + endValue;
 }
 
 std::string AbstractSystemParser::getEmptyString() {

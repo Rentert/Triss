@@ -15,10 +15,13 @@ ParseExecutor::ParseExecutor() {
 
 std::string ParseExecutor::execute() {
     std::string result = getOpenString();
-    for (int i = 0; i < parsers.size() - 1; ++i)
-        result += parsers.at(i) -> update() + ",";
+    auto back = parsers.back();
+    parsers.pop_back();
 
-    result += parsers.back() -> update();
+    for (const auto &value : parsers)
+        result += value -> update() + ",";
+
+    result += back -> update();
 
     return result + getCloseString();
 }
