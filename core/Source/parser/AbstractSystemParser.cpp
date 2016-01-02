@@ -6,6 +6,7 @@
 #include <fstream>
 #include "../../Headers/parcer/AbstractSystemParser.h"
 
+static const std::string singleQuotes = "'";
 
 std::string AbstractSystemParser::readAll(std::string dir) {
     std::ifstream stream(dir);
@@ -28,7 +29,7 @@ std::string AbstractSystemParser::toJson(std::string info) {
     for (int i = 0; i < size; ++i) {
         char ch = info.at(i);
         if (i == len)
-            result += createValue(buffer + ch, "'");
+            result += createValue(buffer + ch, singleQuotes);
         else if (ch == '\n') {
             result += createValue(buffer, "',\n");
             buffer = getEmptyString();
@@ -72,11 +73,25 @@ std::string AbstractSystemParser::replaceChar(std::string str, char from) {
 }
 
 std::string AbstractSystemParser::createValue(std::string buffer, std::string endValue) {
-    std::string rs = replaceChar(buffer, '\t');
-    std::string* array = split(replaceChar(rs, ' '), ':');
-    return  array[0] + " : '" + array[1] + endValue;
+    auto rs = replaceChar(buffer, '\t');
+    auto array = split(replaceChar(rs, ' '), ':');
+
+    auto first = array[0];
+    auto second = array[1];
+
+    return check(first)? "" :
+           first + ": '" + (check(second)? "None" : second) + endValue;
 }
 
 std::string AbstractSystemParser::getEmptyString() {
     return "";
+}
+
+
+std::string AbstractSystemParser::addSingleQuotes(std::string str) {
+    return singleQuotes + str + singleQuotes;
+}
+
+bool AbstractSystemParser::check(std::string str) {
+    return str == " " || str.size() == 0;
 }

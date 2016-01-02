@@ -8,5 +8,5 @@
 const std::string dir = "/proc/meminfo";
 
 std::string MemInfoParser::update() {
-    return "'meminfo': " + toJson(readAll(dir));
+    return "meminfo: " + toJson(readAll(dir));
 }

@@ -8,5 +8,5 @@ const std::string dir = "/proc/sys/kernel/hostname";
 
 std::string UserInfoParser::update() {
     std::string result = replaceChar(readAll(dir), '\n');
-    return "'hostname': '" + result + "'";
+    return "hostname: " + addSingleQuotes(result);
 }
