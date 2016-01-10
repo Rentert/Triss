@@ -1,0 +1,1 @@
+/home/legionem/workdir/triss/core/CMakeFiles/triss.dir

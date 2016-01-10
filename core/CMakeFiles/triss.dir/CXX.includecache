@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/legionem/workdir/triss/core/Headers/parcer/AbstractSystemParser.h
+
+/home/legionem/workdir/triss/core/Headers/parcer/PIDParser.h
+iostream
+-
+../../Headers/parcer/AbstractSystemParser.h
+/home/legionem/workdir/triss/core/Headers/parcer/AbstractSystemParser.h
+vector
+-
+
+/home/legionem/workdir/triss/core/Headers/parcer/ParseExecutor.h
+iostream
+-
+vector
+-
+AbstractSystemParser.h
+/home/legionem/workdir/triss/core/Headers/parcer/AbstractSystemParser.h
+
+/home/legionem/workdir/triss/core/main.cpp
+iostream
+-
+Headers/parcer/PIDParser.h
+/home/legionem/workdir/triss/core/Headers/parcer/PIDParser.h
+Headers/parcer/ParseExecutor.h
+/home/legionem/workdir/triss/core/Headers/parcer/ParseExecutor.h
+
