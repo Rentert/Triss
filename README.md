@@ -1,2 +1,2 @@
 # triss
-Курсовой проект по ос - системный монитор.
+My student project - System Monitor
